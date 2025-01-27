@@ -1,5 +1,4 @@
 # k8s-pub
-# k8s
 ## charmuseum
 ### Install and run
 ```
