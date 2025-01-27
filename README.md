@@ -34,7 +34,13 @@ kube-state-metrics
 exposes k8s objects metrics:
 pods, svc, deployment, configmaps, pv, pvc, node status
 
+## Port forward
 Accessible via: IP:8080/metrics # Use port-forward to access
+```
+kubectl --namespace monitoring port-forward alertmanager-kube-prometheus-stack-alertmanager-0 9093 &
+kubectl --namespace monitoring port-forward prometheus-kube-prometheus-stack-prometheus-0 9090 &
+kubectl --namespace monitoring port-forward kube-prometheus-stack-grafana-679d94648-pbnqj 3000 &
+```
 Alerts to create:
 Check if specific pods/deployements are ready, use AI to create the query
 
