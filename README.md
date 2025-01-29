@@ -318,3 +318,13 @@ metricsBindAddress: "0.0.0.0:10249"
 kubectl rollout restart ds kube-proxy -n kube-system
 ```
 
+## prometheus storage
+Prometheus Storage:
+
+Prometheus stores its time-series data locally on disk in a custom, efficient format. The data is organized into blocks, each containing a set of time-series data for a specific time range.
+
+By default, Prometheus stores data in the data directory (configurable via the --storage.tsdb.path flag). This directory contains subdirectories for blocks, wal (write-ahead log), and other metadata.
+
+Retention Period:
+
+Prometheus has a configurable retention period for how long it keeps historical data. This is set using the --storage.tsdb.retention.time flag (e.g., --storage.tsdb.retention.time=30d for 30 days).
